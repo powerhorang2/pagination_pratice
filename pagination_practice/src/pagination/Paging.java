@@ -1,6 +1,6 @@
 package pagination;
 
-public class Page {
+public class Paging {
 	private int nowPage; // 현재 페이지 번호
 	private int totalPage; // 총 페이지의 수
 	private int pageSize = 10; // 페이지 하나당 출력되는 게시글의 수
@@ -8,12 +8,12 @@ public class Page {
 	private int startRow; // 현재 페이지에서 게시글 리스트의 첫번째 행
 	private int endRow; // 현재 페이지에서 게시글 리스트의 마지막 행
 	
-	public Page() {
+	public Paging() {
 		super();
 	}
 	
 	// 현재 페이지와 게시글의 총량을 가진 생성자.
-	public Page(int nowPage, int totalArticle) {
+	public Paging(int nowPage, int totalArticle) {
 		setNowPage(nowPage);
 		setTotalArticle(totalArticle);
 		setTotalPage();
@@ -22,7 +22,7 @@ public class Page {
 	}
 	
 	// 기본 페이지 하나당 출력되는 게시글 수를 변경할 때 사용하는 현재 페이지와 게시글의 총량을 가진 생성자.
-	public Page(int nowPage, int pageSize, int totalArticle) {
+	public Paging(int nowPage, int pageSize, int totalArticle) {
 		setNowPage(nowPage);
 		setPageSize(pageSize);
 		setTotalArticle(totalArticle);
@@ -46,12 +46,12 @@ public class Page {
 		this.pageSize = pageSize;
 	}
 	
-	// 전체 게시글 갯수
+	// 전체 게시글 개수
 	public void setTotalArticle(int totalArticle) {
 		this.totalArticle = totalArticle;
 	}
 	
-	// 페이지 갯수
+	// 페이지 개수
 	public void setTotalPage() {
 		this.totalPage = this.totalArticle / this.pageSize + (this.totalArticle % this.pageSize == 0 ? 0 : 1);
 		
